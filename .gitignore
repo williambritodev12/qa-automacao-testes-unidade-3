@@ -1,0 +1,27 @@
+# Dependencias do Node.js
+**/node_modules/
+node_modules/
+package-lock.json
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Cypress artefatos gerados em execucoes
+**/cypress/videos/
+**/cypress/screenshots/
+**/cypress/downloads/
+
+# Relatorios de testes e logs locais
+*.log
+reports/
+newman/
+
+# Arquivos do Sistema Operacional e IDEs
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln

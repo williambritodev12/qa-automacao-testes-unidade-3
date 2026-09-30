@@ -1,0 +1,17 @@
+{
+  "name": "web-automation-atividade3",
+  "version": "1.0.0",
+  "description": "Automacao Web Atividade 3",
+  "main": "index.js",
+  "scripts": {
+    "test": "cypress run"
+  },
+  "devDependencies": {
+    "@badeball/cypress-cucumber-preprocessor": "^18.0.0",
+    "@bahmutov/cypress-esbuild-preprocessor": "^2.2.0",
+    "cypress": "^13.0.0"
+  },
+  "cypress-cucumber-preprocessor": {
+    "stepDefinitions": "cypress/support/step_definitions/**/*.{js,ts}"
+  }
+}

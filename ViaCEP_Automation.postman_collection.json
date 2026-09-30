@@ -1,0 +1,67 @@
+{
+  "info": {
+    "name": "ViaCEP_Automation",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Consulta CEP",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Status code é 200\", function () {",
+              "    pm.response.to.have.status(200);",
+              "});",
+              "",
+              "var jsonData = pm.response.json();",
+              "var cidade_esperada = pm.iterationData.get(\"cidade\");",
+              "var estado_esperado = pm.iterationData.get(\"estado\");",
+              "",
+              "// Tratamento de codificação para caracteres acentuados (UTF-8 / Latin-1)",
+              "function normalizar(texto) {",
+              "    if (!texto) return \"\";",
+              "    try {",
+              "        if (texto.includes(\"Ã\")) {",
+              "            return decodeURIComponent(escape(texto));",
+              "        }",
+              "    } catch (e) {}",
+              "    return texto;",
+              "}",
+              "",
+              "pm.test(\"Valida Cidade\", function () {",
+              "    pm.expect(jsonData.localidade).to.eql(normalizar(cidade_esperada));",
+              "});",
+              "",
+              "pm.test(\"Valida Estado\", function () {",
+              "    pm.expect(jsonData.uf).to.eql(normalizar(estado_esperado));",
+              "});"
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://viacep.com.br/ws/{{cep}}/json/",
+          "protocol": "https",
+          "host": [
+            "viacep",
+            "com",
+            "br"
+          ],
+          "path": [
+            "ws",
+            "{{cep}}",
+            "json",
+            ""
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
