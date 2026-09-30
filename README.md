@@ -37,7 +37,6 @@ Resolucao_Atividade_3/
 ├── README.md                                  # Documentação técnica e guia de execução
 ├── dados_cep.json                             # Massa de dados de entrada com 10 CEPs
 ├── ViaCEP_Automation.postman_collection.json  # Coleção Postman parametrizada com testes
-├── roteiro_video_atividade3.txt               # Roteiro estruturado utilizado na gravação
 └── Web_Automation/                            # Projeto de automação Web com Cypress + BDD
     ├── package.json                           # Configurações do projeto e dependências
     ├── cypress.config.js                      # Configuração do Cypress e plugin Cucumber
